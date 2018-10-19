@@ -1,0 +1,21 @@
+#端口号
+server:
+  port: 10022
+
+spring:
+  #服务名称
+  application:
+    name: gamma-service
+  cloud:
+    config:
+      discovery:
+        #启动服务发现的功能，开启了才能调用其它服务
+        enabled: true
+        #发现的服务的名字--对应注册中心的服务名字
+        serviceId: register-center-server
+
+#在注册中心中进行注册
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10019/eureka/
